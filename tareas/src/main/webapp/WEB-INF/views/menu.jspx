@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_operario" z="poNTIIMGlmVWKvJKI8U7ewzFAQo=">
+            <menu:item id="i_operario_new" messageCode="global_menu_new" url="/operarios?form" z="3JRqv9f5Vdfx8z4J0jVJsi49Q5s="/>
+            <menu:item id="i_operario_list" messageCode="global_menu_list" url="/operarios?page=1&amp;size=${empty param.size ? 10 : param.size}" z="THjFwAkWI2f/eON8NrYBex0XjGw="/>
+        </menu:category>
+        <menu:category id="c_direccion" z="vv0L6YTwxMeww0i7QGZBXwkHYTk=">
+            <menu:item id="i_direccion_new" messageCode="global_menu_new" url="/direccions?form" z="OB2aiFOrt88EDndGzgT3SA9+2s8="/>
+            <menu:item id="i_direccion_list" messageCode="global_menu_list" url="/direccions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="i+Ko2byVwDkdL1Uzgv9LWkyIWLQ="/>
+        </menu:category>
+        <menu:category id="c_tarea" z="ZUSskDa1xg9hPVgZu8zZabeqNSg=">
+            <menu:item id="i_tarea_new" messageCode="global_menu_new" url="/tareas?form" z="LQXWZhgOK0iqSpDDiTiV4qQ3C7Q="/>
+            <menu:item id="i_tarea_list" messageCode="global_menu_list" url="/tareas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="DQnx+Kpp1PEUDVOp8NP1hiM/4Xk="/>
+        </menu:category>
+        <menu:category id="c_ejecucion" z="MuM+RHt1ronLsCU9L6xFVYZ9L3U=">
+            <menu:item id="i_ejecucion_new" messageCode="global_menu_new" url="/ejecucions?form" z="IyqcvdPVh7u0VFmgZRpAgSOvP3o="/>
+            <menu:item id="i_ejecucion_list" messageCode="global_menu_list" url="/ejecucions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="+ls/LI39tpdsgMFeDqsSeDUuPbc="/>
+        </menu:category>
+    </menu:menu>
+</div>

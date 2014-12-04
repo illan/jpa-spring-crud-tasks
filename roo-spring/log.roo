@@ -1,0 +1,33 @@
+// Spring Roo 1.3.0.RELEASE [rev f425090] log opened at 2014-12-03 07:53:13
+project --topLevelPackage model --projectName model
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+logging setup --level INFO
+// script --file setup.roo
+quit
+// Spring Roo 1.3.0.RELEASE [rev f425090] log closed at 2014-12-03 07:53:16
+// Spring Roo 1.3.0.RELEASE [rev f425090] log opened at 2014-12-03 07:53:19
+enum type --class ~.domain.Estado
+ enum constant --name COMPLETADA
+ enum constant --name CONDEFECTOS
+ enum constant --name PENDIENTE
+entity jpa --class ~.domain.Operario  --sequenceName OPERARIO_SEQ
+ field string --fieldName nombre --notNull
+entity jpa --class ~.domain.Tarea  --sequenceName TAREA_SEQ
+ field string --fieldName descripcion --notNull
+ field enum --fieldName estado --type ~.domain.Estado --notNull
+entity jpa --class ~.domain.Direccion  --sequenceName DIRECCION_SEQ
+ field string --fieldName descripcion --notNull
+entity jpa --class ~.domain.Ejecucion  --sequenceName EJECUCION_SEQ
+ field date --fieldName fecha --type java.util.Date --notNull
+ field enum --fieldName estado --type ~.domain.Estado --notNull
+// script --file entities.roo
+quit
+// Spring Roo 1.3.0.RELEASE [rev f425090] log closed at 2014-12-03 07:53:26
+// Spring Roo 1.3.0.RELEASE [rev f425090] log opened at 2014-12-03 07:53:29
+web mvc setup
+web mvc all --package ~.web
+web mvc finder all
+web mvc language --code en
+// script --file webmvc.roo
+quit
+// Spring Roo 1.3.0.RELEASE [rev f425090] log closed at 2014-12-03 07:53:36

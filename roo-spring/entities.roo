@@ -1,0 +1,35 @@
+
+# Entities and attributes
+enum type --class ~.domain.Estado
+	enum constant --name COMPLETADA
+	enum constant --name CONDEFECTOS
+	enum constant --name PENDIENTE
+	
+
+entity jpa --class ~.domain.Operario  --sequenceName OPERARIO_SEQ
+	field string --fieldName nombre --notNull
+	
+entity jpa --class ~.domain.Tarea  --sequenceName TAREA_SEQ
+	field string --fieldName descripcion --notNull
+	field enum --fieldName estado --type ~.domain.Estado --notNull
+	
+entity jpa --class ~.domain.Direccion  --sequenceName DIRECCION_SEQ
+	field string --fieldName descripcion --notNull
+	
+entity jpa --class ~.domain.Ejecucion  --sequenceName EJECUCION_SEQ
+	field date --fieldName fecha --type java.util.Date --notNull
+	field enum --fieldName estado --type ~.domain.Estado --notNull
+	
+
+
+# Start of user code for entities and atributes
+
+# End of user code
+
+# References (relations between entities)
+
+
+# Start of user code for references
+
+# End of user code for references
+

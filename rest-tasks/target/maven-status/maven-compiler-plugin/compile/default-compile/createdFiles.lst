@@ -1,0 +1,6 @@
+model/repositories/DireccionRepository.class
+model/repositories/TareaRepository.class
+model/repositories/OperarioRepository.class
+model/config/ApplicationConfig.class
+model/repositories/EjecucionRepository.class
+model/config/Application.class

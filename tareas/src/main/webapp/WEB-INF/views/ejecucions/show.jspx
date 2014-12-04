@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_model_domain_Ejecucion" object="${ejecucion}" path="/ejecucions" z="qhWeGKpaAEA8YsNUxIr4r+GoKv8=">
-        <field:display date="true" dateTimePattern="${ejecucion_fecha_date_format}" field="fecha" id="s_model_domain_Ejecucion_fecha" object="${ejecucion}" z="BerXaGRH5cD77VuD0kgpwLl0RyA="/>
-        <field:display field="estado" id="s_model_domain_Ejecucion_estado" object="${ejecucion}" z="ZtJlAABxabwqE/GVkoboLgkdOg8="/>
-    </page:show>
-</div>

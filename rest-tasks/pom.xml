@@ -33,15 +33,19 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
-
+		<dependency>
+		<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
     </dependencies>
 
     <properties>
         <!-- use UTF-8 for everything -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <!--<start-class>model.config.ApplicationConfig</start-class>-->
-        <start-class>model.config.Application</start-class>
+        <start-class>model.config.ApplicationConfig</start-class>
+        <!--<start-class>model.config.Application</start-class>-->
 
     </properties>
 

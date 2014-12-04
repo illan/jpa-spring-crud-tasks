@@ -10,6 +10,11 @@ package model.domain;
 @javax.persistence.Entity
 public class Tarea
 {
+	
+	public enum Estado
+	{
+		PENDIENTE, DEFECTOS, COMPLETADA;
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
@@ -50,6 +55,11 @@ public class Tarea
 	 
 	@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL) 
 	protected Ejecucion ejecucion;
+	
+	@javax.persistence.Enumerated(javax.persistence.EnumType.STRING) 
+	@javax.persistence.Column(nullable = false) 
+	protected Tarea.Estado estado = Estado.PENDIENTE;
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,7 +79,10 @@ public class Tarea
 	public Tarea(){
 		super();
 	}
-
+	public Tarea(String descripcion){
+		super();
+		this.setDescripcion(descripcion);
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
@@ -125,6 +138,23 @@ public class Tarea
 				}
 			}
 		}	
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	public Tarea.Estado getEstado() {
+		return this.estado;	
+	}
+	
+	public void unsetEstado() {
+		this.estado = Estado.PENDIENTE;	
+	}
+	public void setEstado(Tarea.Estado myEstado) {
+		this.estado = myEstado;	
 	}
 	
 	/**

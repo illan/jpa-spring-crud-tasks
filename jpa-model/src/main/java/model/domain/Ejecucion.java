@@ -9,14 +9,14 @@ import java.util.Date;
  */
  
 @javax.persistence.Entity 
-public class Ejecucion implements EstadoTarea
-{
+public class Ejecucion{
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
 	 */
+
 	 
 	@javax.persistence.Temporal(javax.persistence.TemporalType.DATE) 
 	@javax.persistence.Column(nullable = false) 
@@ -41,7 +41,7 @@ public class Ejecucion implements EstadoTarea
 	 
 	@javax.persistence.Enumerated(javax.persistence.EnumType.STRING) 
 	@javax.persistence.Column(nullable = false) 
-	protected Estado estado;
+	protected Tarea.Estado estado;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,6 +71,20 @@ public class Ejecucion implements EstadoTarea
 	public Ejecucion(){
 		super();
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 */
+	public Ejecucion(Tarea t,Operario o,Tarea.Estado e){
+		super();
+		this.basicSetTarea(t);
+		this.setEstado(e);
+		this.setOperario(o);
+		
+	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,7 +131,7 @@ public class Ejecucion implements EstadoTarea
 	 * @generated
 	 * @ordered
 	 */
-	public Estado getEstado() {
+	public Tarea.Estado getEstado() {
 		return this.estado;	
 	}
 	
@@ -167,7 +181,7 @@ public class Ejecucion implements EstadoTarea
 	 * @generated
 	 * @ordered
 	 */
-	public void setEstado(Estado myEstado) {
+	public void setEstado(Tarea.Estado myEstado) {
 		this.estado = myEstado;	
 	}
 	
@@ -210,7 +224,7 @@ public class Ejecucion implements EstadoTarea
 	 * @ordered
 	 */
 	public void unsetEstado() {
-		this.estado = Estado.PENDIENTE;	
+		this.estado = Tarea.Estado.PENDIENTE;	
 	}
 	
 	/**

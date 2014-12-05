@@ -4,6 +4,8 @@
 /home/ubuntu/workspace/spring-cli/src/main/java/org/tasks/model/domain/Tarea.java
 /home/ubuntu/workspace/spring-cli/src/main/java/org/tasks/model/repositories/OperarioRepository.java
 /home/ubuntu/workspace/spring-cli/src/main/java/org/tasks/model/repositories/EjecucionRepository.java
+/home/ubuntu/workspace/spring-cli/src/main/java/org/tasks/model/controllers/DetallesController.java
 /home/ubuntu/workspace/spring-cli/src/main/java/org/tasks/Application.java
 /home/ubuntu/workspace/spring-cli/src/main/java/org/tasks/model/repositories/DireccionRepository.java
+/home/ubuntu/workspace/spring-cli/src/main/java/org/tasks/model/controllers/ListadosController.java
 /home/ubuntu/workspace/spring-cli/src/main/java/org/tasks/model/domain/Ejecucion.java

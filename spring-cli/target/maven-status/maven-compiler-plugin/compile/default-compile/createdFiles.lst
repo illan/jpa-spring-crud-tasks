@@ -1,10 +1,12 @@
+org/tasks/model/domain/Ejecucion.class
+org/tasks/model/repositories/DireccionRepository.class
 org/tasks/model/domain/Operario.class
 org/tasks/model/domain/Direccion.class
 org/tasks/Application.class
 org/tasks/model/repositories/EjecucionRepository.class
-org/tasks/model/domain/Tarea.class
+org/tasks/model/controllers/DetallesController.class
+org/tasks/model/controllers/ListadosController.class
 org/tasks/model/repositories/TareaRepository.class
-org/tasks/model/domain/Ejecucion.class
+org/tasks/model/domain/Tarea.class
 org/tasks/model/domain/Tarea$Estado.class
-org/tasks/model/repositories/DireccionRepository.class
 org/tasks/model/repositories/OperarioRepository.class

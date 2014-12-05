@@ -9,7 +9,7 @@ import org.tasks.model.domain.Ejecucion;
  * <!--  end-user-doc  -->
  * @generated
  */
-public  interface EjecucionRepository  extends CrudRepository<Ejecucion,long>
+public  interface EjecucionRepository  extends CrudRepository<Ejecucion,Long>
 {
 	
 }

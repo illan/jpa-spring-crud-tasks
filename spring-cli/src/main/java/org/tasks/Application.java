@@ -55,7 +55,7 @@ public class Application {
         
         context.getBean(EjecucionRepository.class).save(e);
         tareaRepository.save(t);
-        Repository.save(o);
+        repository.save(o);
         
         repository.save(new Operario("Chloe"));
         repository.save(new Operario("Bauer"));

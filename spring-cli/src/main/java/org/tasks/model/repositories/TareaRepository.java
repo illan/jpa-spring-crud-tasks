@@ -15,16 +15,16 @@ import java.util.List;
  * <!--  end-user-doc  -->
  * @generated
  */
-public  interface TareaRepository  extends CrudRepository<Tarea,long>
+public  interface TareaRepository  extends CrudRepository<Tarea,Long>
 {
 
 	List<Tarea> findAll();
 	
     @Query("select tarea from Tarea tarea where tarea.asignado = :id")
-	 List<Tarea> findAllByOperarioId(@Param("operarioId") long operarioId);
+	 List<Tarea> findAllByOperarioId(@Param("id") Long id);
 
 	 @Query("select tarea from Tarea tarea where tarea.asignado = :id and tarea.estado = :estado")
-	 List<Tarea> findAllByOperarioIdAndEstado(@Param("id") long operarioId,@Param("estado") Tarea.Estado estado);
+	 List<Tarea> findAllByOperarioIdAndEstado(@Param("id") Long id,@Param("estado") Tarea.Estado estado);
 	
 }
 

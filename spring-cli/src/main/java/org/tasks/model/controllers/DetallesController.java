@@ -22,7 +22,7 @@ public class DetallesController {
     
     
     @RequestMapping("/detalles/{id}")
-    public String detalles(@PathVariable("id") long id , Model model) {
+    public String detalles(@PathVariable("id") Long id , Model model) {
         model.addAttribute("operario",repository.findOne(id) );
         model.addAttribute("tareas",tareaRepository.findAllByOperarioId(id) );
         return "detalles";

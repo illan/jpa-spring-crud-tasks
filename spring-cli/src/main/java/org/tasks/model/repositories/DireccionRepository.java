@@ -11,7 +11,7 @@ import org.tasks.model.domain.Direccion;
  * @generated
  */
 //@RepositoryRestResource(collectionResourceRel = "direcciones", path = "direcciones")
-public  interface DireccionRepository  extends CrudRepository<Direccion,long>
+public  interface DireccionRepository  extends CrudRepository<Direccion,Long>
 {
 	
 }

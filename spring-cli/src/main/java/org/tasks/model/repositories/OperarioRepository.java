@@ -10,10 +10,10 @@ import java.util.List;
  * <!--  end-user-doc  -->
  * @generated
  */
-public  interface OperarioRepository  extends CrudRepository<Operario,long>
+public  interface OperarioRepository  extends CrudRepository<Operario,Long>
 {
 	List<Operario> findByNombre(String nombre);
-	Operario findOne(long id);
+	Operario findOne(Long id);
 	List<Operario> findAll();
 }
 

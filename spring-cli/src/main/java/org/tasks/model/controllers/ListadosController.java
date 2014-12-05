@@ -18,13 +18,13 @@ public class ListadosController {
     @Autowired TareaRepository tareaRepository;
     
     @RequestMapping("/asignadas/{id}")
-    public List<Tarea> asignadas(@RequestParam(value="id", required=false) long operarioId) {
+    public List<Tarea> asignadas(@PathVariable("id") Long id) {
         return    tareaRepository.
-        findAllByOperarioId(operarioId);
+        findAllByOperarioId(id);
     }
     
     @RequestMapping("/completadas/{id}")
-    public List<Tarea> completadas(@RequestParam(value="id", required=false) long operarioId,@RequestParam(value="desde", required=false, defaultValue="World") String name, Model model) {
+    public List<Tarea> completadas(@PathVariable("id") Long operarioId,@RequestParam(value="desde", required=false, defaultValue="World") String name, Model model) {
         return tareaRepository.findAllByOperarioIdAndEstado(
             operarioId,Tarea.Estado.COMPLETADA);
     }

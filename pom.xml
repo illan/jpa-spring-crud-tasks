@@ -10,6 +10,7 @@
     <modules>
         <module>jpa-model</module>
         <module>rest-tasks</module>
+        <module>spring-cli</module>
     </modules>
 
     <parent>

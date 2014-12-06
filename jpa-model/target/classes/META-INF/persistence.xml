@@ -5,10 +5,10 @@
 
 	<persistence-unit name="modelUnit" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>model.domain.Ejecucion</class>
-		<class>model.domain.Direccion</class>
-		<class>model.domain.Operario</class>
-		<class>model.domain.Tarea</class>
+		<class>org.tasks.model.domain.Ejecucion</class>
+		<class>org.tasks.model.domain.Direccion</class>
+		<class>org.tasks.model.domain.Operario</class>
+		<class>org.tasks.model.domain.Tarea</class>
 		
 		<properties>
 	      <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>

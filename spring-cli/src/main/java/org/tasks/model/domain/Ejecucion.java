@@ -77,13 +77,22 @@ public class Ejecucion{
 	 * @generated
 	 */
 	public Ejecucion(Tarea t,Operario o,Tarea.Estado e){
-		this.basicSetTarea(t);
-		this.setEstado(e);
+		this.basicSetEstado(e);
 		this.setOperario(o);
-		this.setFecha(new Date());
+		this.basicSetTarea(t);
+        	updateEstadoTarea();
+        	this.setFecha(new Date());
 		
 	}
+	public Ejecucion(Tarea t,Tarea.Estado e){
+		this.basicSetEstado(e);
+		this.basicSetTarea(t);
+		this.setFecha(new Date());
+        	this.setOperario(t.getAsignado());
+        	updateEstadoTarea();
+	
 
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,12 +103,7 @@ public class Ejecucion{
 	public void basicSetTarea(Tarea myTarea) {
 		if (this.tarea != myTarea) {
 			if (myTarea != null){
-				if (this.tarea != myTarea) {
-					Tarea oldtarea = this.tarea;
 					this.tarea = myTarea;
-					if (oldtarea != null)
-						oldtarea.unsetEjecucion();
-				}
 			}
 		}	
 	}
@@ -181,7 +185,18 @@ public class Ejecucion{
 	 * @ordered
 	 */
 	public void setEstado(Tarea.Estado myEstado) {
+		basicSetEstado(myEstado);	
+		updateEstadoTarea();
+	}
+	public void basicSetEstado(Tarea.Estado myEstado) {
 		this.estado = myEstado;	
+	}
+
+	public void updateEstadoTarea() {
+		
+		if (this.getTarea()!=null
+		&& this.getTarea().getEjecucion()==this)
+			this.getTarea().setEstado(estado);
 	}
 	
 	/**
@@ -193,6 +208,7 @@ public class Ejecucion{
 	public void setTarea(Tarea myTarea) {
 		this.basicSetTarea(myTarea);
 		myTarea.basicSetEjecucion(this);
+		updateEstadoTarea();
 			
 	}
 	

@@ -43,17 +43,20 @@ public class Application {
   
         Operario o = new Operario("Jack");
         repository.save(o);
-        Direccion d = new Direccion();
-        d.setDescripcion("Direccion Tarea 1");
+        
+        Direccion d = new Direccion("Direccion Tarea 1");
+        
+        context.getBean(DireccionRepository.class).save(d);
+        
         Tarea t=new Tarea("Tarea asignada a Jack");
         t.setDireccion(d);
-        
         t.setAsignado(o);
 
         tareaRepository.save(t);
+
         Ejecucion e=new Ejecucion(t,o,Tarea.Estado.COMPLETADA);
-        
         context.getBean(EjecucionRepository.class).save(e);
+
         tareaRepository.save(t);
         repository.save(o);
         

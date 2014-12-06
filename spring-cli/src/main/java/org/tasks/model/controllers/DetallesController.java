@@ -22,10 +22,19 @@ public class DetallesController {
     
     
     @RequestMapping("/detalles/{id}")
-    public String detalles(@PathVariable("id") Long id , Model model) {
-        model.addAttribute("operario",repository.findOne(id) );
-        model.addAttribute("tareas",tareaRepository.findAllByOperarioId(id) );
+    public String detalles(@PathVariable("id") String id , Model model) {
+        Operario operario=repository.findOne(Long.parseLong(id));
+        model.addAttribute("operario",operario );
+        model.addAttribute("tareas",tareaRepository.findByAsignado(operario) );
         return "detalles";
     }
+       
+    @RequestMapping("/todas")
+    public String todas(Model model) {
+        model.addAttribute("tareas",tareaRepository.findAll() );
+        return "detalles";
+    }
+       
+
 
 }

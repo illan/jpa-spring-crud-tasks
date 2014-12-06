@@ -6,7 +6,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.Query;
 
 
-import org.tasks.model.domain.Tarea;
+import org.tasks.model.domain.*;
 import java.util.List;
 
 
@@ -20,11 +20,11 @@ public  interface TareaRepository  extends CrudRepository<Tarea,Long>
 
 	List<Tarea> findAll();
 	
-    @Query("select tarea from Tarea tarea where tarea.asignado = :id")
-	 List<Tarea> findAllByOperarioId(@Param("id") Long id);
+    //@Query("select tarea from Tarea tarea where tarea.asignado = :id")
+	 List<Tarea> findByAsignado(@Param("asignado") Operario asignado);
 
-	 @Query("select tarea from Tarea tarea where tarea.asignado = :id and tarea.estado = :estado")
-	 List<Tarea> findAllByOperarioIdAndEstado(@Param("id") Long id,@Param("estado") Tarea.Estado estado);
-	
+	 //@Query("select tarea from Tarea tarea where tarea.asignado = :id and tarea.estado = :estado")
+	 List<Tarea> findByAsignadoAndEstado(@Param("asignado") Operario asignado,@Param("estado") Tarea.Estado estado);
+
 }
 

@@ -99,8 +99,8 @@ public class Tarea
 			if (myDireccion != null){
 					Direccion olddireccion = this.direccion;
 					this.direccion = myDireccion;
-					if (olddireccion != null)
-						olddireccion.removeTarea(this);
+					// if (olddireccion != null)
+					// 	olddireccion.removeTarea(this);
 				}
 		}	
 	}
@@ -133,12 +133,9 @@ public class Tarea
 	public void basicSetEjecucion(Ejecucion myEjecucion) {
 		if (this.ejecucion != myEjecucion) {
 			if (myEjecucion != null){
-				if (this.ejecucion != myEjecucion) {
 					Ejecucion oldejecucion = this.ejecucion;
 					this.ejecucion = myEjecucion;
-					if (oldejecucion != null)
-						oldejecucion.unsetTarea();
-				}
+					setEstado(myEjecucion.getEstado());
 			}
 		}	
 	}
@@ -150,6 +147,8 @@ public class Tarea
 	 * @ordered
 	 */
 	public Tarea.Estado getEstado() {
+		if (this.getEjecucion()!=null)
+		return this.ejecucion.getEstado();
 		return this.estado;	
 	}
 	
@@ -157,7 +156,8 @@ public class Tarea
 		this.estado = Estado.PENDIENTE;	
 	}
 	public void setEstado(Tarea.Estado myEstado) {
-		this.estado = myEstado;	
+		this.estado = myEstado;
+
 	}
 	
 	/**
@@ -228,7 +228,7 @@ public class Tarea
 	 */
 	public void setDireccion(Direccion myDireccion) {
 		this.basicSetDireccion(myDireccion);
-		myDireccion.addTarea(this);	
+	//	myDireccion.addTarea(this);	
 	}
 	
 	/**
@@ -275,7 +275,7 @@ public class Tarea
 			return;
 		Direccion olddireccion = this.direccion;
 		this.direccion = null;
-		olddireccion.removeTarea(this);	
+	//	olddireccion.removeTarea(this);	
 	}
 	
 	/**
@@ -303,7 +303,7 @@ public class Tarea
 			return;
 		Ejecucion oldejecucion = this.ejecucion;
 		this.ejecucion = null;
-		oldejecucion.unsetTarea();	
+		//oldejecucion.unsetTarea();	
 	}
 	
 }

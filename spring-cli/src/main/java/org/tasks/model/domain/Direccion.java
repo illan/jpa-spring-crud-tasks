@@ -37,8 +37,8 @@ public class Direccion
 	 * @ordered
 	 */
 	 
-	@javax.persistence.OneToMany(mappedBy = "direccion") 
-	protected Set<Tarea> tarea;
+	// @javax.persistence.OneToMany(mappedBy = "direccion") 
+	// protected Set<Tarea> tarea;
 
 
 	/**
@@ -46,10 +46,11 @@ public class Direccion
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Direccion(){
-		super();
+	protected Direccion(){}
+	
+	public Direccion(String descripcion){
+		setDescripcion(descripcion);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
@@ -66,12 +67,12 @@ public class Direccion
 	 * @generated
 	 * @ordered
 	 */
-	public Set<Tarea> getTarea() {
-		if(this.tarea == null) {
-				this.tarea = new HashSet<Tarea>();
-		}
-		return (Set<Tarea>) this.tarea;	
-	}
+	// public Set<Tarea> getTarea() {
+	// 	if(this.tarea == null) {
+	// 			this.tarea = new HashSet<Tarea>();
+	// 	}
+	// 	return (Set<Tarea>) this.tarea;	
+	// }
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,15 +89,15 @@ public class Direccion
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
-	 */
-	public void addAllTarea(Set<Tarea> newTarea) {
-		if (this.tarea == null) {
-			this.tarea = new HashSet<Tarea>();
-		}
-		for (Tarea tmp : newTarea)
-			tmp.setDireccion(this);
+	//  */
+	// public void addAllTarea(Set<Tarea> newTarea) {
+	// 	if (this.tarea == null) {
+	// 		this.tarea = new HashSet<Tarea>();
+	// 	}
+	// 	for (Tarea tmp : newTarea)
+	// 		tmp.setDireccion(this);
 			
-	}
+	// }
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,13 +105,13 @@ public class Direccion
 	 * @generated
 	 * @ordered
 	 */
-	public void removeAllTarea(Set<Tarea> newTarea) {
-		if(this.tarea == null) {
-			return;
-		}
+	// public void removeAllTarea(Set<Tarea> newTarea) {
+	// 	if(this.tarea == null) {
+	// 		return;
+	// 	}
 		
-		this.tarea.removeAll(newTarea);	
-	}
+	// 	this.tarea.removeAll(newTarea);	
+	// }
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,15 +128,15 @@ public class Direccion
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 * @ordered
-	 */
-	public void addTarea(Tarea newTarea) {
-		if(this.tarea == null) {
-			this.tarea = new HashSet<Tarea>();
-		}
+	//  */
+	// public void addTarea(Tarea newTarea) {
+	// 	if(this.tarea == null) {
+	// 		this.tarea = new HashSet<Tarea>();
+	// 	}
 		
-		if (this.tarea.add(newTarea))
-			newTarea.basicSetDireccion(this);	
-	}
+	// 	if (this.tarea.add(newTarea))
+	// 		newTarea.basicSetDireccion(this);	
+	// }
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,14 +154,14 @@ public class Direccion
 	 * @generated
 	 * @ordered
 	 */
-	public void removeTarea(Tarea oldTarea) {
-		if(this.tarea == null)
-			return;
+	// public void removeTarea(Tarea oldTarea) {
+	// 	if(this.tarea == null)
+	// 		return;
 		
-		if (this.tarea.remove(oldTarea))
-			oldTarea.unsetDireccion();
+	// 	if (this.tarea.remove(oldTarea))
+	// 		oldTarea.unsetDireccion();
 			
-	}
+	// }
 	
 }
 

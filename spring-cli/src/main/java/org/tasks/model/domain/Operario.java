@@ -32,8 +32,9 @@ public class Operario
 	 * @ordered
 	 */
 	 
+	//@org.codehaus.jackson.annotate.JsonManagedReference 
 	@javax.persistence.OneToMany(mappedBy = "asignado") 
-	protected Set<Tarea> tarea;
+	protected Set<Tarea> tareas;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,11 +75,11 @@ public class Operario
 	 * @generated
 	 * @ordered
 	 */
-	public Set<Tarea> getTarea() {
-		if(this.tarea == null) {
-				this.tarea = new HashSet<Tarea>();
+	public Set<Tarea> getTareas() {
+		if(this.tareas == null) {
+				this.tareas = new HashSet<Tarea>();
 		}
-		return (Set<Tarea>) this.tarea;	
+		return (Set<Tarea>) this.tareas;	
 	}
 	
 	/**
@@ -98,8 +99,8 @@ public class Operario
 	 * @ordered
 	 */
 	public void addAllTarea(Set<Tarea> newTarea) {
-		if (this.tarea == null) {
-			this.tarea = new HashSet<Tarea>();
+		if (this.tareas == null) {
+			this.tareas = new HashSet<Tarea>();
 		}
 		for (Tarea tmp : newTarea)
 			tmp.setAsignado(this);
@@ -113,11 +114,11 @@ public class Operario
 	 * @ordered
 	 */
 	public void removeAllTarea(Set<Tarea> newTarea) {
-		if(this.tarea == null) {
+		if(this.tareas == null) {
 			return;
 		}
 		
-		this.tarea.removeAll(newTarea);	
+		this.tareas.removeAll(newTarea);	
 	}
 	
 	/**
@@ -137,11 +138,11 @@ public class Operario
 	 * @ordered
 	 */
 	public void addTarea(Tarea newTarea) {
-		if(this.tarea == null) {
-			this.tarea = new HashSet<Tarea>();
+		if(this.tareas == null) {
+			this.tareas = new HashSet<Tarea>();
 		}
 		
-		if (this.tarea.add(newTarea))
+		if (this.tareas.add(newTarea))
 			newTarea.basicSetAsignado(this);	
 	}
 	
@@ -162,10 +163,10 @@ public class Operario
 	 * @ordered
 	 */
 	public void removeTarea(Tarea oldTarea) {
-		if(this.tarea == null)
+		if(this.tareas == null)
 			return;
 		
-		if (this.tarea.remove(oldTarea))
+		if (this.tareas.remove(oldTarea))
 			oldTarea.unsetAsignado();
 			
 	}

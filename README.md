@@ -1,13 +1,15 @@
-jpa-spring-crud-tasks
-=====================
+# Miscellaneous PoC projects based on spring, to test json serialization of cyclic entities
 
-sample projects using spring-data, spring-jpa, spring-boot, spring-rest 
+## jpa-spring-crud-tasks
 
-jpa-model contains persistence layer:
-==========================================
+
+sample project using spring-data, spring-jpa, spring-boot, spring-rest 
+
+## jpa-model contains persistence layer:
+
 based on UML model generation from https://repository.genmymodel.com/illan/tareas
 
-spring-cli
-==========
+## spring-cli
+
 REST seb service, to illustrate JSON serialization issues on cyclic JPA graphs
 
